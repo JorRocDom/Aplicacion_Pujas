@@ -1,219 +1,183 @@
-📱 Aplicación de Subastas en Directo (Live Auctions App)
-📌 Descripción del proyecto
+# 📱 Aplicació de Subhastes en Directe (Live Auctions App)
 
-Este proyecto consiste en el desarrollo de una aplicación móvil de subastas en directo, inspirada en un modelo híbrido entre plataformas de subastas online y aplicaciones de streaming en tiempo real.
+## 📌 Descripció del projecte
 
-La aplicación permite a los vendedores subastar productos en vivo, mientras los usuarios pueden pujar en tiempo real, interactuar mediante chat y seguir la evolución de la subasta de forma inmediata. El enfoque principal del proyecto es la experiencia en directo, la rapidez en la interacción y la sensación de evento en tiempo real.
+Aquest projecte consisteix en el desenvolupament d’una **aplicació mòbil de subhastes en directe**, inspirada en un model híbrid entre plataformes de subhastes online i aplicacions de streaming en temps real (tipus eBay + Twitch).
 
-La aplicación está desarrollada con React y sigue una arquitectura modular y escalable, orientada a una experiencia de usuario moderna, clara y minimalista.
+L’aplicació permet als venedors **subhastar productes en viu**, mentre que els usuaris poden **pujar en temps real**, interactuar mitjançant un xat en directe i seguir l’evolució de la subhasta de manera immediata. El projecte posa el focus principal en **l’experiència live**, la rapidesa de les pujades i la sensació d’esdeveniment en temps real.
 
-🎯 Objetivo principal
+L’aplicació està desenvolupada amb **React**, seguint una arquitectura modular i escalable, amb una interfície moderna, clara i minimalista.
 
-Crear una aplicación móvil que:
+---
 
-Centralice subastas en tiempo real.
+## 🎯 Objectiu del projecte
 
-Permita interacción directa entre compradores y vendedores.
+Crear una aplicació mòbil que:
+- Centralitzi subhastes en temps real.
+- Permeti la interacció directa entre compradors i venedors.
+- Prioritzi la immediatesa i la competitivitat de les pujades.
+- Diferenciï clarament entre subhastes amb càmera i sense càmera.
 
-Priorice la inmediatez, la competitividad y la experiencia live.
+---
 
-Diferencie claramente entre subastas con streaming y sin streaming.
+## 🔴 Tipus de subhasta en directe
 
-🔴 Tipos de subasta en directo
+L’aplicació admet **dos tipus de subhasta live**:
 
-La aplicación soporta dos modalidades de subasta live:
+### 1. Subhasta Live amb càmera
+- El venedor transmet el producte mitjançant **streaming de vídeo**.
+- Els usuaris poden veure el producte en temps real.
+- Inclou xat en directe, historial de pujades i comptador de temps.
+- Indicador visual **“EN DIRECTE 🔴”**.
 
-1. Subasta Live con cámara
+### 2. Subhasta Live sense càmera
+- No hi ha transmissió de vídeo.
+- Es mostra una **imatge o carrusel del producte**.
+- Manté el sistema de pujades en temps real, xat i comptador.
+- Pensada per a subhastes ràpides o productes ja coneguts.
 
-El vendedor transmite en streaming de vídeo.
+Ambdós tipus comparteixen la mateixa lògica de subhasta, adaptant únicament el component visual superior.
 
-Los usuarios pueden ver el producto en tiempo real.
+---
 
-Incluye chat en directo, historial de pujas y contador de tiempo.
+## 🧭 Navegació general de l’aplicació
 
-Indicador visual “EN DIRECTO 🔴”.
+L’aplicació utilitza una **navegació moderna amb barra inferior (Bottom Tab Bar)**, formada per cinc seccions principals:
 
-2. Subasta Live sin cámara
+- **Home**
+- **Buscar**
+- **Directe**
+- **Favorits**
+- **Perfil**
 
-No hay transmisión de vídeo.
+El botó **Directe** és l’eix central de l’app i permet accedir ràpidament a les subhastes en curs.
 
-Se muestra la imagen o carrusel del producto.
+---
 
-Mantiene el sistema de pujas, chat en vivo y contador.
+## 🏠 Pantalles principals
 
-Ideal para subastas rápidas o productos ya conocidos.
+### Home
+- Subhastes en directe.
+- Subhastes pròximes amb recordatoris.
+- Subhastes destacades.
+- Categories.
+- Subhastadors populars.
 
-Ambos modos comparten la misma lógica de puja en tiempo real, adaptando únicamente el componente visual superior.
+### Buscar
+- Barra de cerca.
+- Filtres per:
+  - Categoria.
+  - Preu.
+  - Temps restant.
+  - Tipus de subhasta (amb càmera / sense càmera).
+- Resultats dinàmics.
 
-🧭 Navegación general de la aplicación
+### Directe
+- Feed de subhastes en viu.
+- Prioritat a les subhastes actives.
 
-La app utiliza una navegación moderna con barra inferior (Bottom Tab Bar), compuesta por cinco secciones principales:
+### Favorits
+- Subhastes guardades.
+- Subhastadors seguits.
+- Accés a notificacions.
 
-Home
+### Perfil
+- Gestió del perfil d’usuari.
+- Historial de pujades.
+- Compres realitzades.
+- Mètodes de pagament i adreces.
+- Suport i FAQ.
 
-Buscar
+---
 
-Directo
+## 🎥 Pantalla de Subhasta en Directe (pantalla clau)
 
-Favoritos
+La pantalla de subhasta en directe és **el nucli principal de l’aplicació** i està dissenyada per facilitar una experiència ràpida i intuïtiva.
 
-Perfil
+Inclou:
+- Component superior adaptable:
+  - Vídeo en streaming (si és amb càmera).
+  - Imatge del producte (si és sense càmera).
+- Preu actual destacat.
+- Comptador de temps restant.
+- Botó principal **“PUJAR +X€”** molt visible.
+- Camp de puja manual.
+- Historial de pujades en temps real.
+- Xat en directe tipus streaming.
+- Nombre d’usuaris connectats.
+- Alertes com **“T’han superat la puja”**.
 
-El botón Directo actúa como eje central de la aplicación, dando acceso inmediato a las subastas en vivo.
+---
 
-🏠 Pantallas principales
-Home
+## 🏆 Estat final de la subhasta
 
-Subastas en directo destacadas.
+- **Has guanyat la subhasta**  
+  Resum del producte, preu final i accés al pagament.
 
-Subastas próximas con recordatorios.
+- **Has perdut la subhasta**  
+  Preu final i recomanacions de subhastes similars.
 
-Subastas destacadas.
+---
 
-Categorías.
+## 🛍️ Funcionalitats per a compradors
 
-Subastadores populares.
+- Pujades en temps real.
+- Xat en directe.
+- Favorits i recordatoris.
+- Historial de pujades.
+- Gestió de compres i pagaments.
+- Seguiment de subhastadors.
 
-Buscar
+---
 
-Barra de búsqueda.
+## 🧑‍💼 Funcionalitats per a venedors
 
-Filtros por:
+- Perfil públic amb reputació i seguidors.
+- Panell de control de subhastes:
+  - Actives.
+  - Pròximes.
+  - Finalitzades.
+- Creació de subhastes.
+- Gestió de subhastes en directe.
+- Moderació del xat.
+- Visualització de pujades en temps real.
 
-Categoría.
+---
 
-Precio.
+## ⭐ Funcionalitats opcionals
 
-Tiempo restante.
+- Xat privat comprador–venedor.
+- Valoracions després de la compra.
+- Sistema de report d’usuaris i subhastes.
 
-Tipo de subasta (con cámara / sin cámara).
+---
 
-Resultados en tiempo real.
+## 🎨 Disseny i experiència d’usuari
 
-Directo
+L’aplicació segueix un estil:
+- Modern i minimalista.
+- Basat en **cards**, comptadors grans i botons d’acció destacats.
+- Centrat en el directe i la rapidesa a l’hora de pujar.
+- Optimitzat per a dispositius mòbils.
 
-Feed de subastas en vivo.
+---
 
-Priorización de subastas activas.
+## 🚀 Tecnologies
 
-Acceso rápido a eventos en curso.
+- **Frontend:** React
+- **Arquitectura:** Components reutilitzables i gestió d’estat
+- **Enfocament:** Temps real, experiència live i escalabilitat
 
-Favoritos
+*(Les tecnologies de backend i streaming es definiran en fases posteriors del projecte.)*
 
-Subastas guardadas.
+---
 
-Subastadores seguidos.
+## 👥 Equip del projecte
 
-Acceso a notificaciones.
+- **Eduard Vilaseca**
+- **Jordi Rocha**
+- **Hugo Córdoba**
+- **Roberto Lotrenau**
 
-Perfil
+---
 
-Gestión del perfil de usuario.
-
-Historial de pujas.
-
-Compras realizadas.
-
-Métodos de pago y direcciones.
-
-Soporte y preguntas frecuentes.
-
-🎥 Pantalla de Subasta en Directo (núcleo de la app)
-
-La pantalla de subasta en directo es el elemento central de la aplicación y está diseñada para maximizar la rapidez y claridad al pujar.
-
-Incluye:
-
-Componente superior adaptable:
-
-Vídeo en streaming (si hay cámara).
-
-Imagen del producto (si no hay cámara).
-
-Precio actual destacado.
-
-Contador de tiempo restante.
-
-Botón principal “PUJAR +X€” altamente visible.
-
-Campo de puja manual.
-
-Historial de pujas en tiempo real.
-
-Chat en directo estilo streaming.
-
-Número de usuarios conectados.
-
-Sistema de alertas (“Te han superado la puja”).
-
-🏆 Estados post-subasta
-
-Has ganado la subasta
-Resumen del producto, precio final y acceso al pago.
-
-Has perdido la subasta
-Precio final y recomendaciones de subastas similares.
-
-🛍️ Funcionalidades para compradores
-
-Pujas en tiempo real.
-
-Chat en directo.
-
-Favoritos y recordatorios.
-
-Historial de pujas.
-
-Gestión de compras y pagos.
-
-Seguimiento de vendedores.
-
-🧑‍💼 Funcionalidades para vendedores
-
-Perfil público con reputación y seguidores.
-
-Dashboard de subastas:
-
-Activas.
-
-Próximas.
-
-Finalizadas.
-
-Creación de subastas personalizadas.
-
-Control de subastas en directo.
-
-Moderación del chat.
-
-Visualización de pujas en tiempo real.
-
-⭐ Funcionalidades extra (opcionales)
-
-Chat privado comprador–vendedor.
-
-Valoraciones tras la compra.
-
-Sistema de reportes de usuarios y subastas.
-
-🎨 Diseño y experiencia de usuario
-
-La aplicación sigue un diseño:
-
-Moderno y minimalista.
-
-Basado en cards, contadores grandes y botones llamativos.
-
-Enfocado en el directo y la acción rápida.
-
-Optimizado para dispositivos móviles.
-
-🚀 Tecnologías
-
-Frontend: React
-
-Arquitectura: Componentes reutilizables y estado global
-
-Enfoque: Tiempo real, experiencia live y escalabilidad
-
-(Las tecnologías backend y de streaming se definirán en fases posteriores del proyecto.)
